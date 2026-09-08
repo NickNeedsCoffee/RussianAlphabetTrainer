@@ -109,19 +109,27 @@ def retrieve_settings(is_alphabet):
 def main():
     while True:
         os.system('cls')
-        print("Welcome to the Russian typing trainer!")
-        print('')
+        print("Welcome to the Russian typing trainer!!")
         print("Select one of the following options:")
+        print('')
+        print('')
 
-        print('1: Alphabet training')
-        print('2: Word training')
-        print('3: Stop training')
-        print()
-        print('4: Learn Alphabet')
+        print('\t\t\t0: Stop training')
+        print('')
+        print('Letters')
+        print('\t\t\t1: Alphabet training')
+        print('\t\t\t2: Learn Alphabet')
+        print('')
+        print('Vocabulary')
+        print('\t\t\t3: Word typing')
+        #print('4: Translation (Russian -> English)')
+        #print('5: Reverse translation (English -> Russian)')
+        #print('6: Sentence translation')
+        #print('7: Reverse sentence translation')
 
         my_input = input()
 
-        if my_input == '3':
+        if my_input == '0':
             break
 
         if my_input == '1':
@@ -130,13 +138,13 @@ def main():
             run_letter_training(samplesize, reps)
 
         if my_input == '2':
+            os.system('cls')
+            learning_letters()
+
+        if my_input == '3':
             samplesize, reps = retrieve_settings(False)
             os.system('cls')
             run_word_training(samplesize, reps)
-
-        if my_input == '4':
-            os.system('cls')
-            learning_letters()
 
 
 if __name__ == '__main__':

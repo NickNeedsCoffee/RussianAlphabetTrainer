@@ -90,4 +90,5 @@ def main():
     remove_vocab_list()
     print_vocab_repo()
 
-main()
+if __name__ == '__main__':
+    main()
