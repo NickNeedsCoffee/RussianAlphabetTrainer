@@ -1,19 +1,8 @@
 #imports
 import random
 import os
-
-#фывапролджэ
-#йцукенгшщзхъ
-#ячсмитьбю
-#ё
-
-russian_alphabet = ['ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э', 'й', 'ц', 'у', 'к', 'е',
-                    'н', 'г', 'ш', 'щ', 'з', 'х', 'ъ', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю', 'ё']
-
-russian_to_english_alphabet = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'q', 'w', 'e', 'r', 't',
-                               'y', 'u', 'i', 'o', 'p', '[', ']', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '`',]
-
-russian_words = ['приет', 'да']
+from json_manager import *
+from storage import russian_alphabet, russian_words, russian_to_english_alphabet
 
 def already_in_index(n, indexes):
     for i in indexes:
@@ -64,6 +53,9 @@ def run_letter_training(sample_size : int, reps : int):
             print(f"Incorrect... {reps - i} questions left!!")
             i += 1
 
+    print(f"You got {correct} out of {reps} correct! That's {(correct/reps)*100}%")
+    input()
+
 def learning_letters():
     global russian_to_english_alphabet
     global russian_alphabet
@@ -88,7 +80,6 @@ def learning_letters():
         print()
         print()
         print()
-
 
 def run_word_training(sample_size : int, reps : int):
     global russian_words
