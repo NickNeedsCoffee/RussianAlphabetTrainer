@@ -81,6 +81,10 @@ def create_vocab_list():
         listname = str(input())
         append_vocab_list(contents, listname)
 
+def list_vocab_repo():
+    repo = load_vocab_repo()
+
+
 def main():
     #create_initial_vocab_repo()
     #test_vocab_list = {"фыва" : "Test1", "йуцезщшг" : "Test3"}
